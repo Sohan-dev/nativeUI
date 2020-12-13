@@ -9,7 +9,7 @@ function TextFieldInput(props) {
   return (
     <View>
       <TextInput
-        style={{margin: 30, top: '40%'}}
+        style={{margin: 20, top: '40%', height: 50}}
         value={props.value}
         label={props.label}
         mode={'outlined'}

@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import {ImageBackground, Text, View, Image} from 'react-native';
-import {TextInput, Button} from 'react-native-paper';
+import {Text, View, StyleSheet} from 'react-native';
+import {Button, Checkbox} from 'react-native-paper';
 import TextFieldInput from '../Common/TextField';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassowrd] = useState('');
   const [details, setDetails] = useState({});
-
+  const [checked, setChecked] = useState(false);
   const handleChange = (name, data) => {
     console.log(name, data);
 
@@ -21,16 +21,13 @@ const LoginPage = () => {
 
   return (
     <View>
-      <Text
-        style={{
-          left: '40%',
-          fontSize: 20,
-          fontStyle: 'italic',
-          marginTop: '10%',
-        }}>
-        Login
-      </Text>
-
+      <Text style={styles.singinText}>Sing In</Text>
+      <View style={styles.underLine}></View>
+      <View>
+        <Text style={styles.informationText}>
+          Fillup the below fields to access your Account.
+        </Text>
+      </View>
       <TextFieldInput
         label={'Email'}
         onChangeText={handleChange}
@@ -38,10 +35,19 @@ const LoginPage = () => {
       />
       <TextFieldInput label={'Password'} onChangeText={handleChange} />
 
+      <View>
+        <Checkbox
+          status={checked ? 'checked' : 'unchecked'}
+          onPress={() => {
+            setChecked(!checked);
+          }}
+        />
+      </View>
+
       <Button
         mode="contained"
         onPress={() => console.log('Pressed')}
-        style={{bottom: '-60%', margin: '10%'}}>
+        style={styles.button}>
         Press me
       </Button>
     </View>
@@ -49,20 +55,19 @@ const LoginPage = () => {
 };
 export default LoginPage;
 
-// <TextInput
-//         style={{margin: 30, top: '40%'}}
-//         label="Email"
-//         value={email}
-//         mode={'outlined'}
-//         label={'Email'}
-//         onChangeText={(text) => handleChange(text)}
-//       />
-//       <TextInput
-//         style={{margin: 30, top: '40%'}}
-//         label="Password"
-//         value={password}
-//         mode={'outlined'}
-//         label={'Password'}
-//         secureTextEntry
-//         onChangeText={(text) => handleChange(text)}
-//       />
+var styles = StyleSheet.create({
+  singinText: {
+    left: '40%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+  underLine: {
+    borderBottomColor: 'black',
+    marginHorizontal: '35%',
+    alignItems: 'center',
+    borderBottomWidth: 1.5,
+  },
+  informationText: {textAlign: 'center', fontSize: 15, marginTop: 15},
+  button: {bottom: '-16%', margin: '10%'},
+});
