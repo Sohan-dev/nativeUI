@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {
   ImageBackground,
@@ -11,9 +11,11 @@ import {Actions} from 'react-native-router-flux';
 import bgImage from '../../assets/splash.jpeg';
 
 const SplashScreen = () => {
-  setTimeout(() => {
-    Actions.login();
-  }, 2500);
+  useEffect(() => {
+    setTimeout(() => {
+      Actions.login();
+    }, 2500);
+  }, []);
 
   return (
     <View style={{flex: 1}}>
