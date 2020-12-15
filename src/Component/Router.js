@@ -2,6 +2,7 @@ import React from 'react';
 import {Scene, Router, Stack} from 'react-native-router-flux';
 import DashboardPage from './Dashboard';
 import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 import SplashScreen from './SplashScreen';
 
 const Routes = () => {
@@ -18,6 +19,7 @@ const Routes = () => {
           key="dashboard"
           component={DashboardPage}
           title={'Loan Investment Report'}></Scene>
+        <Scene key="signup" component={SignupPage} hideNavBar={true}></Scene>
       </Stack>
     </Router>
   );

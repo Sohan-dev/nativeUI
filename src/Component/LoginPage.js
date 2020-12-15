@@ -26,6 +26,10 @@ const LoginPage = () => {
     Actions.dashboard();
   };
 
+  const gotoSignup = () => {
+    Actions.signup();
+  };
+
   return (
     <View style={styles.bgColor}>
       <Text style={styles.singinText}>{text.signinText}</Text>
@@ -82,7 +86,7 @@ const LoginPage = () => {
           <Button
             uppercase={false}
             mode="contained"
-            onPress={() => console.log('Pressed')}
+            onPress={gotoSignup}
             style={{
               marginRight: 12,
               paddingTop: 4,
@@ -129,6 +133,7 @@ var styles = StyleSheet.create({
     color: '#f5fefe',
     textAlign: 'center',
     fontSize: 30,
+    fontWeight: 'bold',
   },
 
   informationText: {

@@ -8,4 +8,5 @@ const DashboardPage = () => {
     </View>
   );
 };
+
 export default DashboardPage;
