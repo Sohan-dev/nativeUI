@@ -52,7 +52,7 @@ const LoginPage = () => {
       </View>
 
       <View style={{marginTop: 25, marginBottom: 25}}>
-        <Image source={fingerprintImage} style={styles.fingerPrintIcon} />
+        <Image source={fingerprintImage} />
       </View>
 
       <Button
